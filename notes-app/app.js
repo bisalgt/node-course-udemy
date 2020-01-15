@@ -1,12 +1,22 @@
-const validator = require('validator');
+
 
 const getNotes = require('./notes');
 
-const notes = getNotes();
+const chalk = require('chalk');
 
+
+const notes = getNotes();
 
 console.log(notes);
 
-console.log(validator.isEmail('bishal-gmail.co'));
+// Order doesnot matters
 
-console.log(validator.isURL('https://bisal.co'));
+console.log(chalk.bgGreen(notes));
+console.log(chalk.green(notes));
+console.log(chalk.green.bgRed(notes));
+console.log(chalk.green.bgYellow.bold(notes));
+console.log(chalk.red.bgBlue(notes));
+console.log(chalk.inverse.red.bgBlack.bold(notes));
+console.log(chalk.red.bgBlack.bold(notes));
+console.log(chalk.bgKeyword('red')(notes));
+console.log(chalk.bold.red.bgKeyword('white')(notes));
