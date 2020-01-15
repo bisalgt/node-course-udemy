@@ -20,3 +20,5 @@ console.log(chalk.inverse.red.bgBlack.bold(notes));
 console.log(chalk.red.bgBlack.bold(notes));
 console.log(chalk.bgKeyword('red')(notes));
 console.log(chalk.bold.red.bgKeyword('white')(notes));
+console.log(chalk.green.bold.italic('Hey italic person'+ chalk.red.bold('!!!')));
+console.log(chalk.red.inverse.bold('Hey jude'));
