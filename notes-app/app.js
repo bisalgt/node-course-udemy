@@ -1,8 +1,6 @@
+const add = require('./utils.js'); // when we are loading a file, it is going to execute a file. 
+
+const sum = add(3, 423);
 
 
-const fs = require('fs');
-
-// fs.writeFileSync('notes.txt', 'My name is Bishal Gautam.');
-
-fs.appendFileSync('notes.txt', ' I live in Kalanki.');
-console.log(fs.readdirSync('.'));
+console.log(sum);
