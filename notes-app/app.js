@@ -1,6 +1,12 @@
-const add = require('./utils.js'); // when we are loading a file, it is going to execute a file. 
+const validator = require('validator');
 
-const sum = add(3, 423);
+const getNotes = require('./notes');
+
+const notes = getNotes();
 
 
-console.log(sum);
+console.log(notes);
+
+console.log(validator.isEmail('bishal-gmail.co'));
+
+console.log(validator.isURL('https://bisal.co'));
