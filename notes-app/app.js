@@ -1,24 +1,46 @@
-
-
+const chalk = require('chalk');
+const yargs = require('yargs');
 const getNotes = require('./notes');
 
-const chalk = require('chalk');
+// Customize yargs
+yargs.version('1.1.0');
+
+// Create add command
+yargs.command({
+    command:'add',
+    describe: 'Add a new note.',
+    handler: () => {
+        console.log('Adding note~....');
+    }
+})
 
 
-const notes = getNotes();
+// Create remove command
+yargs.command({
+    command:'remove',
+    describe: 'Remove old note',
+    handler : () => {
+        console.log('Removing notes..');
+    }
+})
 
-console.log(notes);
+// Create list command
+yargs.command({
+    command:'list',
+    describe: 'List your notes.',
+    handler: () => {
+        console.log('List of the values');
+    }
+})
 
-// Order doesnot matters
+// Create read command
+yargs.command({
+    command:'read',
+    describe: 'Read a note.',
+    handler: () => {
+        console.log('Reading a note done...');
+    }
+})
 
-console.log(chalk.bgGreen(notes));
-console.log(chalk.green(notes));
-console.log(chalk.green.bgRed(notes));
-console.log(chalk.green.bgYellow.bold(notes));
-console.log(chalk.red.bgBlue(notes));
-console.log(chalk.inverse.red.bgBlack.bold(notes));
-console.log(chalk.red.bgBlack.bold(notes));
-console.log(chalk.bgKeyword('red')(notes));
-console.log(chalk.bold.red.bgKeyword('white')(notes));
-console.log(chalk.green.bold.italic('Hey italic person'+ chalk.red.bold('!!!')));
-console.log(chalk.red.inverse.bold('Hey jude'));
+console.log(yargs.argv);
+// This is needed to run the yargs.
