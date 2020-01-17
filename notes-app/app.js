@@ -9,8 +9,21 @@ yargs.version('1.1.0');
 yargs.command({
     command:'add',
     describe: 'Add a new note.',
-    handler: () => {
-        console.log('Adding note~....');
+    builder: {
+        title: {
+            describe: 'Note title',
+            demandOption: true,
+            type: 'string'
+        },
+        body:{
+            describe: 'Body of the note',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: (argv) => {
+        console.log('Title: ', argv.title);
+        console.log('Body: ', argv.body);
     }
 })
 
@@ -42,5 +55,11 @@ yargs.command({
     }
 })
 
-console.log(yargs.argv);
+// console.log(yargs.argv);
 // This is needed to run the yargs.
+// this parse the argv so that the above code runs well
+// instead of this to call yargs to parse the argument we can
+// also call yargs.parse()
+
+yargs.parse();
+console.log(yargs)
