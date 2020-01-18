@@ -27,6 +27,26 @@ function addNote(title, body){
 
 }
 
+function removeNote(title){
+    const notes = loadNotes();
+    const duplicateNotes = notes.filter(function(note){
+        return note.title === title;
+    });
+    if (duplicateNotes.length === 1){
+        console.log('Deleting note: ', title)
+        const notesFiltered = notes.filter(function(note){
+            return note.title !== title; 
+        });
+        saveNotes(notesFiltered);
+        console.log(chalk.bgGreen('Note removed'))
+    }
+    else {
+        console.log(chalk.bgRed('NOte doesnot exists, add first to delete'));
+    }
+}
+
+
+
 const saveNotes = (notes) => {
     const dataJSON = JSON.stringify(notes);
     fs.writeFileSync('notes.json', dataJSON);
@@ -41,4 +61,8 @@ function loadNotes(){
         return [];
     }
 }
-module.exports = {getNotes, addNote};
+module.exports = {
+    getNotes: getNotes,
+    addNote: addNote,
+    removeNote: removeNote
+};
