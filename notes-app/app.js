@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 const yargs = require('yargs');
-const notes = require('./notes');
+const notes = require('./notes.js');
 
 // Customize yargs
 yargs.version('1.1.0');
@@ -49,7 +49,7 @@ yargs.command({
     command:'list',
     describe: 'List your notes.',
     handler() {
-        console.log('List of the values');
+        notes.listNotes();
     }
 })
 
