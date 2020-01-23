@@ -11,7 +11,9 @@ const addNote =(title, body) => {
     // });
 
     const duplicateNote = notes.find((note) => note.title === title); // returns the first match only 
-
+    
+    debugger
+    
     if (!duplicateNote){
         notes.push({
             title: title,

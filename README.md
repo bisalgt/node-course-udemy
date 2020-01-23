@@ -9,3 +9,9 @@
 
 ### nodemon is a good tool to use while development as it automatically updates the terminal output after change in code
 
+# In synchronous programming one line runs after another.
+# NONE of our asynchronous programme is going to run until the main programme is completed.
+# JS is single threaded// only call stack
+# In node is multi threaded using c++ implementation.
+### node uses call stack-- Node api -- callback queue. there are three threads. and event loop checks the callback queue and call stack and if call back is empty it pushes the callback queues functions to execute which were pushed after they were ready in NODE API and sent to the callback queue.
+#### event loop cannot run any of our asynchronous call back until the call stack is empty.
