@@ -15,3 +15,6 @@
 # In node is multi threaded using c++ implementation.
 ### node uses call stack-- Node api -- callback queue. there are three threads. and event loop checks the callback queue and call stack and if call back is empty it pushes the callback queues functions to execute which were pushed after they were ready in NODE API and sent to the callback queue.
 #### event loop cannot run any of our asynchronous call back until the call stack is empty.
+
+
+# To use npm module use npm init to initialize packages.json in that dir so that npm install will install required packages and save the discription in package.json. TO install using packages.json use npm install.
