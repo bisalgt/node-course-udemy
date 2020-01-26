@@ -5,21 +5,22 @@ const forecast = require('./utils/forecast')
 // console.log(process.argv)
 const address = process.argv[2]
 if (address) {
-    geocode(address, (error, data) => {
+    geocode(address, (error, {latitude, longitude, place}) => {
     
         if (error) {
             return console.log(error)
         }
         console.log('Error : ', error)
-        console.log('Data : ', data)
+        console.log('Data : ', latitude, longitude)
     
-        forecast(data.latitude, data.longitude, (error, data) => {
+        forecast(latitude, longitude, (error, data) => {
     
             if (error) {
                 return console.log(error)
             }
             console.log(data)
-            const msg = `The climate for ${data.timezone} is ${data.climate}. It is ${data.temperature} degree with ${data.rainChances} % of rain.`
+            const {timezone, climate, temperature, rainChances} = data // Object destructuring
+            const msg = `The climate for ${timezone} is ${climate}. It is ${temperature} degree with ${rainChances} % of rain.`
             console.log(msg)
         })
     })
