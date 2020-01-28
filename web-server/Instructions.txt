@@ -6,3 +6,5 @@
 // this is asynchronous
 
 ///// To automatically start the app/ start server again use nodemon instead of node 
+6. In node, using to send json data to the browser we use app.send(). inside which consist of object
+   or array, node is automatically going to stringify to json format for us no need to worry. 

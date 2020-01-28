@@ -7,13 +7,26 @@
   })
 
   app.get('/help', (req, res) => { // another route
-      res.send('Help page!')
+      res.send({
+          name: 'bishal',
+          age: 24
+      })
   })
   app.get('/about', (req, res) => { // another route
-      res.send('About page!')
+      res.send([{
+        name: 'sushil'
+      },
+      {
+        name: 'bishal'
+      }
+    
+    ])
   })
   app.get('/weather', (req, res) => { // another route
-      res.send('<h1>Weather page!</h1>')
+      res.send({
+          forecast: 'It is raining',
+          location: 'Nepalgunj'
+      })
   })
 
   app.listen(3000, () => { // starting the server
