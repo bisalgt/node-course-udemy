@@ -1,0 +1,8 @@
+1. First use npm init to create package.json so that we can install the required npm package.json
+2. Express in an npm library/ module
+3. req contains methods available on the request
+4. response contains all the methods than can be used fro the requester.
+5. listen method is to start the webserver.
+// this is asynchronous
+
+///// To automatically start the app/ start server again use nodemon instead of node 
