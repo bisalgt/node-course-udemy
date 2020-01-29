@@ -6,7 +6,6 @@
   const publicDirectoryPath = path.join(__dirname, '../public')
 
   app.use(express.static(publicDirectoryPath)) // To serve the directory
-  // app.use('/help',express.static(publicDirectoryPath+'help.html'))
 
   // app.get('', (req, res) => { // this a route
   //     res.send('Hello express.')
