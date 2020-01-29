@@ -1,10 +1,20 @@
+  const path = require('path')
+
   const express = require('express')
 
   const app = express()
+  const publicDirectoryPath = path.join(__dirname, '../public')
 
-  app.get('', (req, res) => { // this a route
-      res.send('Hello express.')
-  })
+  app.use(express.static(publicDirectoryPath)) // To serve the directory
+  // app.use('/help',express.static(publicDirectoryPath+'help.html'))
+
+  // app.get('', (req, res) => { // this a route
+  //     res.send('Hello express.')
+  // })
+
+  console.log(__dirname)
+
+  
 
   app.get('/help', (req, res) => { // another route
       res.send({
