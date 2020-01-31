@@ -43,6 +43,13 @@
     })
   })
 
+  app.get('/help/*', (req, res) => {
+    res.render('404', {
+      title: 'Help article error!',
+      name: 'Bishal Gautam',
+      message: "Help article not found!"
+    })
+  })
 
   app.get('/weather', (req, res) => { // another route
       res.send({
@@ -51,6 +58,13 @@
       })
   })
 
+  app.get('*', (req, res) => {
+    res.render('404', {
+      title: 404,
+      name: 'Bishal Gautam G!',
+      message: 'Page not found, try the correct URL.'
+    })
+  })
 
   app.listen(3000, () => { // starting the server
       console.log('Listening on port 3000...')
